@@ -1,0 +1,103 @@
+#include<stdio.h>
+
+
+int main()
+{
+int test,c[3],p[3],i,j,flag;
+scanf("%d",&test);
+for(i=0;i<test;i++)
+{
+    flag=1;
+    for(j=0;j<3;j++)
+    {
+        scanf("%d",&c[j]);
+    }
+    for(j=0;j<3;j++)
+    {
+        scanf("%d",&p[j]);
+    }
+  
+    if(c[0]>c[1])
+    {
+        if(p[0]<=p[1])
+        {
+            printf("NOT FAIR\n");
+            flag=0;
+        }
+    }
+    else if (c[0]<c[1])
+    {
+        if(p[0]>=p[1])
+        {
+            printf("NOT FAIR\n");
+            flag=0;
+        }
+    }
+    else
+    {
+        if(p[0]!=p[1])
+        {
+            printf("NOT FAIR\n");
+            flag=0;
+        }
+    }
+    if(flag)
+    {
+    if(c[0]>c[2])
+    {
+        if(p[0]<=p[2])
+        {
+            printf("NOT FAIR\n");
+            flag=0;
+        }
+    }
+    else if (c[0]<c[2])
+    {
+        if(p[0]>=p[2])
+        {
+            printf("NOT FAIR\n");
+            flag=0;
+        }
+    }
+    else
+    {
+        if(p[0]!=p[2])
+        {
+            printf("NOT FAIR\n");
+            flag=0;
+        }
+    }
+    }
+    if(flag)
+    {
+    if(c[1]>c[2])
+    {
+        if(p[1]<=p[2])
+        {
+            printf("NOT FAIR\n");
+            flag=0;
+        }
+    }
+    else if (c[1]<c[2])
+    {
+        if(p[1]>=p[2])
+        {
+            printf("NOT FAIR\n");
+            flag=0;
+        }
+    }
+    else
+    {
+        if(p[1]!=p[2])
+        {
+            printf("NOT FAIR\n");
+            flag=0;
+        }
+    }
+    }
+    if(flag)
+    printf("FAIR\n");
+}
+return 0;
+}
+

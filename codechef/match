@@ -1,0 +1,27 @@
+#include <bits/stdc++.h> 
+#include<cmath>
+using namespace std;
+int main()
+{
+   int t;
+   long int a,b,sum;
+   
+   
+   cin>>t;
+   while(t>0)
+   {
+       cin>>a>>b;
+       sum=a+b;
+       int add=0;
+       int c[10]={6,2,5,5,4,5,6,3,7,6};
+       while(sum>0)
+       {
+           sum=sum%10;
+           add=a[sum]+add;
+           sum=sum/10;
+       }
+       cout<<add<<cout;
+       t=t-1
+       
+   }
+}

@@ -1,0 +1,59 @@
+#include <map>
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+#define long long long
+const long M = 10; // modulo
+map<long, long> F;
+
+long f(long n) {
+	if (F.count(n))
+	return F[n];
+	long k=n/2;
+	if (n%2==0)
+	{ // n=2*k
+		return F[n] = (f(k)*f(k) + f(k-1)*f(k-1)) % M;
+	} 
+	else
+	{ // n=2*k+1
+		return F[n] = (f(k)*f(k+1) + f(k-1)*f(k)) % M;
+	}
+}
+
+main(){
+   long  n,value=0;
+   long  test;
+   cin>>test;
+    long i;
+   while(test)
+   {
+       n=0;
+    test=test-1;
+    
+    F[0]=F[1]=1;
+    cin>>n;
+    if(n==1)
+    {
+        cout<<0;
+    }
+    else
+    {
+    for(i=0;i<=n/2;i++)
+    {
+        long result=pow(2,i);
+        if(result<=n)
+        {
+            value=result;
+        }
+        else
+        break;
+        
+    }
+    cout << f(value-2) << endl;
+    }
+
+       
+   }
+	
+}

@@ -1,0 +1,53 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+#define ll long long
+int main()
+{  ll i,j,n,m,test,l,q,x,y;
+    cin>>test;
+    
+    while(test)
+    {  
+        long count=0;
+        cin>>n>>m;
+        cin>>q;
+        vector<vector<ll> >stuff;
+        for(i=0;i<n;i++)
+        {
+            vector<ll>tmp;
+            for(j=0;j<m;j++)
+            {
+                tmp.push_back(0);
+            }
+            stuff.push_back(tmp);
+        }
+        
+        for(l=0;l<q;l++)
+        {
+            cin>>x>>y;
+            for(i=x-1,j=0;j<stuff[i].size();j++)
+            {
+            stuff[i][j]=(stuff[i][j]+1)%2;
+            }
+            for(i=0,j=y-1;i<stuff.size();i++)
+            {
+              stuff[i][j]=(stuff[i][j]+1)%2;      
+            }
+        }
+       
+            for(i=0;i<stuff.size();i++)
+            {
+                for(j=0;j<stuff[i].size();j++)
+                {
+                    if(1)
+                    count++;
+                    
+                }
+            }
+        cout<<count<<endl;
+       
+        test=test-1;
+    }
+}
+
+
